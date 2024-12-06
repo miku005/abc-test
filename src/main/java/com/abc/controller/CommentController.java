@@ -18,6 +18,9 @@ public class CommentController {
     }
     @PostMapping
     public String createComment(@RequestBody Comment comment, @RequestParam long postId){
+        System.out.println(100);
+        System.out.println(100);
+
         Post post = postRepository.findById(postId).get();
         comment.setPost(post);
         commentRepository.save(comment);
